@@ -1,27 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site com Quotes</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Quotes Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #quote-display {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao Meu Site</h1>
-    <p>Aqui estão algumas frases inspiradoras:</p>
-  </header>
-  
-  <main>
-    <section id="quotes-container">
-      <div id="quote-display">Carregando frases...</div>
-    </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2024 Meu Site</p>
-  </footer>
+  <h1>Random Quote</h1>
+  <div id="quote-display">Loading...</div>
 
-  <script src="script.js"></script>
+  <script>
+    // Lista de frases diretamente no script
+    const quotes = 
+[
+    {"quote": "Il venait de partir. → Ele tinha acabado de sair."},
+    {"quote": "Elle venait chaque jour. → Ela vinha todos os dias."},
+    {"quote": "Cendrillon: C’est fou comme le destin agit parfois sans prévenir."}
+    {"quote": "Aurore: J'avais l’impression que le monde venait de s’arrêter quand je t’ai vue pour la première fois."}
+    {"quote": "Lieux mystérieux – Lugares misteriosos."}
+    {"quote": "Soirée d’hiver – Noite de inverno."}
+    {"quote": "Vieille – Antiga, velha."}
+    {"quote": "Se promènent au lever du soleil – Passeiam ao nascer do sol."}
+    {"quote": "avenir – futuro"}
+    {"quote": "royaumes lointains – reinos distantes"}
+    {"quote": "merveilles – maravilhas"}
+    {"quote": "soin – cuidado"}
+    {"quote": "broche ornée d’émeraudes – broche adornada com esmeraldas"}
+    {"quote": "les yeux pleins de tendresse – olhos cheios de ternura"}
+    {"quote": "l'aube – amanhecer}
+    {"quote": "L’attend le moins – Surpresa inesperada, onde menos esperado."}
+    {"quote": "Liés – Destinos unidos ou profundamente conectados."}
+    {"quote": "Le moins: Significa o mínimo"}
+    {"quote": "venait de découvrir"}
+    {"quote": "La promesse de l'aube"}
+    {"quote": "Elles parlent des aventures dont elles rêvent, des lieux mystérieux où elles pourront découvrir de nouvelles merveilles."}
+
+];
+
+    // Local onde as frases serão exibidas 
+    const quoteDisplay = document.getElementById("quote-display");
+
+    // Função para exibir uma frase aleatória
+    function displayRandomQuote() {
+      // Seleciona uma frase aleatória
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const randomQuote = quotes[randomIndex].quote;
+
+      // Exibe a frase
+      quoteDisplay.textContent = `"${randomQuote}"`;
+    }
+
+    // Chama a função ao carregar a página
+    displayRandomQuote();
+  </script>
 </body>
 </html>
